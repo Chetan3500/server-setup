@@ -1,0 +1,7 @@
+Conflict Resolution Steps:
+1. Created feature/edit1 branch and changed hostname label to "Host".
+2. Merged feature/edit1 into main.
+3. Created feature/edit2 branch and changed hostname label to "System".
+4. Attempted to merge feature/edit2 into main, causing a conflict.
+5. Edited sysinfo.sh to keep "Host" label.
+6. Committed and pushed the resolution.
