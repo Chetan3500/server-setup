@@ -42,7 +42,7 @@ A Bash script to automate Nginx web server setup on Ubuntu.
 
 ## Screenshots
 
-![ec2 Nginx webpage on local browser](./img/Screenshot_2025-08-27_14-27-09.png)
+![ec2 Nginx webpage on local browser](./Screenshot_2025-08-27_14-27-09.png)
 
 
 
