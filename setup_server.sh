@@ -2,9 +2,20 @@
 
 set -e
 
+LOGFILE="/var/log/setup_server.log"
+exec > >(tee -a "$LOGFILE") 2>&1
+echo "Starting setup at $(date)"
+
 # Check root privileges
 if [ "$EUID" -ne 0 ]; then
     echo "Please run as root (use sudo)"
+    exit 1
+fi
+
+# Check internet connectivity
+echo "Checking internet connectivity..."
+if ! ping -c 1 google.com &> /dev/null; then
+    echo "Error: No internet connection."
     exit 1
 fi
 
@@ -35,5 +46,5 @@ fi
 # Print server URL
 IP=$(hostname -I | awk '{print $1}')
 echo "Server is up! Access it at http://$IP"
-
+echo "Setup completed at $(date)"
 
