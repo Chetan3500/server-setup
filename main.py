@@ -10,7 +10,7 @@ app = FastAPI()
 @app.get("/")
 async def root():
     logger.info("Accessing root endpoint")
-    return {"message": "Welcome to my FastAPI app!"}
+    return {"message": "Welcome to my DevOps API!"}
 
 
 @app.get("/info")
