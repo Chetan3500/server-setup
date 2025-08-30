@@ -3,10 +3,11 @@ platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0 -- /home/ubuntu/serv
 cachedir: .pytest_cache
 rootdir: /home/ubuntu/server-setup
 plugins: anyio-4.10.0, httpx-0.35.0
-collecting ... collected 3 items
+collecting ... collected 4 items
 
-test_main.py::test_root PASSED                                           [ 33%]
-test_main.py::test_health PASSED                                         [ 66%]
-test_main.py::test_info PASSED                                           [100%]
+test_main.py::test_root PASSED                                           [ 25%]
+test_main.py::test_health PASSED                                         [ 50%]
+test_main.py::test_info PASSED                                           [ 75%]
+test_main.py::test_metrics PASSED                                        [100%]
 
-============================== 3 passed in 0.39s ===============================
+============================== 4 passed in 0.40s ===============================
