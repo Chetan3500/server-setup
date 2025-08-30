@@ -26,3 +26,4 @@ def test_metrics():
     response = client.get("/metrics")
     assert response.status_code == 200
     assert "http_requests_total" in response.text
+    assert "custom_requests_total" in response.text
