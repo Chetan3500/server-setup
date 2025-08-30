@@ -10,7 +10,7 @@ async def root():
 
 @app.get("/info")
 async def info():
-    return {"server": "EC2", "phase": "2"}
+    return {"server": "AWS EC2", "app": "FastAPI", "version": "1.0"}
 
 
 @app.get("/health")
