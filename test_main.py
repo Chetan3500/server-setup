@@ -20,3 +20,7 @@ def test_info():
     response = client.get("/info")
     assert response.status_code == 200
     assert response.json() == {"server": "AWS EC2", "app": "FastAPI", "version": "1.0"}
+
+
+def test_dummy():
+    assert True
