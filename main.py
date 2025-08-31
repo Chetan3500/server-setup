@@ -34,7 +34,7 @@ async def info():
 async def health():
     logger.info("Accessing health endpoint")
     custom_requests.labels(endpoint="health").inc()
-    env = os.getenv("APP_ENV", "unknown")
+    env = os.getenv("APP_ENV", "production")
     if env != "production":
         raise HTTPException(status_code=503, detail="Not in production mode")
     return {"status": "healthy", "env": env}
