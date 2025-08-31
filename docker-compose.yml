@@ -1,0 +1,20 @@
+services:
+  fastapi:
+    build: .
+    image: fastapi-app
+    ports:
+      - "8000:80"
+    networks:
+      - app-network
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9091:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
