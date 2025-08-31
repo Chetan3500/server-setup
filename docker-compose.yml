@@ -1,12 +1,17 @@
-
 services:
   fastapi:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: fastapi-app
     networks:
       - app-network
     deploy:
       replicas: 3
+      restart_policy:
+        condition: on-failure
+    environment:
+      - APP_ENV=production
   prometheus:
     image: prom/prometheus:latest
     ports:

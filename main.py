@@ -1,5 +1,6 @@
 import logging
-from fastapi import FastAPI
+import os
+from fastapi import FastAPI, HTTPException
 from prometheus_fastapi_instrumentator import Instrumentator
 from prometheus_client import Counter
 
@@ -33,4 +34,7 @@ async def info():
 async def health():
     logger.info("Accessing health endpoint")
     custom_requests.labels(endpoint="health").inc()
-    return {"status": "healthy"}
+    env = os.getenv("APP_ENV", "production")
+    if env != "production":
+        raise HTTPException(status_code=503, detail="Not in production mode")
+    return {"status": "healthy", "env": env}

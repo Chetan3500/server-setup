@@ -1,0 +1,6 @@
+NAME                        IMAGE                    COMMAND                  SERVICE      CREATED              STATUS              PORTS
+server-setup-fastapi-1      fastapi-app              "uvicorn main:app --…"   fastapi      About a minute ago   Up About a minute   
+server-setup-fastapi-2      fastapi-app              "uvicorn main:app --…"   fastapi      About a minute ago   Up About a minute   
+server-setup-fastapi-3      fastapi-app              "uvicorn main:app --…"   fastapi      About a minute ago   Up About a minute   
+server-setup-nginx-1        nginx:latest             "/docker-entrypoint.…"   nginx        About a minute ago   Up About a minute   0.0.0.0:80->80/tcp, [::]:80->80/tcp
+server-setup-prometheus-1   prom/prometheus:latest   "/bin/prometheus --c…"   prometheus   About a minute ago   Up About a minute   0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
