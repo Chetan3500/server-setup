@@ -1,0 +1,1 @@
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"up","instance":"fastapi:80","job":"fastapi"},"value":[1756639953.723,"1"]}]}}

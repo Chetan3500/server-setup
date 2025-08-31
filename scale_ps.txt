@@ -1,0 +1,5 @@
+NAME                        IMAGE                    COMMAND                  SERVICE      CREATED              STATUS          PORTS
+server-setup-fastapi-1      fastapi-app              "uvicorn main:app --…"   fastapi      About a minute ago   Up 13 seconds   0.0.0.0:8000->80/tcp, [::]:8000->80/tcp
+server-setup-fastapi-2      fastapi-app              "uvicorn main:app --…"   fastapi      About a minute ago   Up 12 seconds   0.0.0.0:8001->80/tcp, [::]:8001->80/tcp
+server-setup-fastapi-3      fastapi-app              "uvicorn main:app --…"   fastapi      About a minute ago   Up 11 seconds   0.0.0.0:8002->80/tcp, [::]:8002->80/tcp
+server-setup-prometheus-1   prom/prometheus:latest   "/bin/prometheus --c…"   prometheus   About a minute ago   Up 13 seconds   0.0.0.0:9091->9090/tcp, [::]:9091->9090/tcp
