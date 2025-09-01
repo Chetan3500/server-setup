@@ -1,0 +1,5 @@
+NAME                      READY   STATUS    RESTARTS   AGE
+fastapi-6d999cff6-d8lvk   1/1     Running   0          52m
+fastapi-6d999cff6-nb9x6   1/1     Running   0          52m
+fastapi-6d999cff6-t8m4q   1/1     Running   0          52m
+nginx-596fb74657-5jscb    1/1     Running   0          58s
