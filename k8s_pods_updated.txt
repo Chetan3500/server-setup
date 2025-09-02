@@ -1,0 +1,6 @@
+NAME                         READY   STATUS    RESTARTS        AGE
+fastapi-6d999cff6-d8lvk      1/1     Running   1 (9m26s ago)   24h
+fastapi-6d999cff6-nb9x6      1/1     Running   1 (9m26s ago)   24h
+fastapi-6d999cff6-t8m4q      1/1     Running   1 (9m26s ago)   24h
+nginx-596fb74657-5jscb       1/1     Running   2 (6m40s ago)   23h
+prometheus-7ff48ccd8-zv27g   1/1     Running   0               5m9s
