@@ -1,6 +1,6 @@
 # DevOps Automation Portfolio
 
-A project showcasing DevOps skills with Linux, Bash, Git, Docker, FastAPI, GitHub Actions, Prometheus, and Docker Compose on AWS EC2.
+A project showcasing DevOps skills with Linux, Bash, Git, Docker, FastAPI, GitHub Actions, Prometheus, Grafana, and Kubernetes on Ubuntu.
 
 ## Phase 1: Automated Nginx Setup
 - **Script**: `setup_server.sh`
@@ -16,12 +16,16 @@ A project showcasing DevOps skills with Linux, Bash, Git, Docker, FastAPI, GitHu
 - **Features**: GitHub Actions CI/CD, Prometheus monitoring.
 
 ## Phase 4: Orchestration and Scaling
-Production-like deployment with Docker Compose, Nginx load balancing, and Prometheus.
+- **Files**: `docker-compose.yml`, `nginx.conf`, `project4_*.txt`, `nginx_screenshot.png`
+- **Features**: Docker Compose with Nginx load balancing, Prometheus monitoring.
+
+## Phase 5: Kubernetes and Advanced Monitoring
+Production-like deployment with Kubernetes, Nginx, Prometheus, and Grafana.
 
 ### Prerequisites
-- Ubuntu 22.04 (AWS EC2)
-- Docker, Docker Compose v2.29.1, Python 3, FastAPI, Nginx, Prometheus
-- Ports 80, 8000-8002, 9090 open
+- Ubuntu (local or AWS EC2)
+- Docker, Minikube v1.34.0, kubectl v1.31.1, Python 3, FastAPI, Nginx, Prometheus, Grafana v11.2.0
+- Ports 80, 9090, 3000 open
 
 ### Setup Instructions
 1. Clone:
@@ -29,26 +33,38 @@ Production-like deployment with Docker Compose, Nginx load balancing, and Promet
    git clone https://github.com/Chetan3500/server-setup
    cd server-setup
    ```
-2. Build and run FastAPI:
-    ```bash
-    docker compose up -d
-    ```
-3. Access at
+2. Start Minikube:
+   ```bash
+   minikube start --driver=docker
+   ```
+3. Deploy:
+   ```bash
+   kubectl apply -f fastapi-deployment.yaml
+   kubectl apply -f fastapi-service.yaml
+   kubectl apply -f nginx-deployment.yaml
+   kubectl apply -f nginx-configmap.yaml
+   kubectl apply -f nginx-service.yaml
+   kubectl apply -f prometheus-configmap.yaml
+   kubectl apply -f prometheus-deployment.yaml
+   kubectl apply -f prometheus-service.yaml
+   kubectl apply -f grafana-deployment.yaml
+   kubectl apply -f grafana-service.yaml
+   ```
+4. Access:
+   - FastAPI: `xdg-open $(minikube service nginx --url)`
+   - Prometheus: `xdeg-open $(minikube service prometheus --url)`
+   - Grafana: `xdeg-open $(minikube service grafana --url)` (login: admin/admin)
 
-- FastAPI: `http://13.233.140.52:80`
-- Prometheus: `http://13.233.140.52:9090`
-
-`13.233.140.52` -> public-ip
 
 ### CI/CD
 
 - **Workflow**: `.github/workflows/ci.yml`.
-- Tests `main.py` and build Docker image on push/pull request.
+- Tests, builds Docker image, validates Kubernetes manifests.
 
-### Monitoringg
 
-- Prometheus scrapes `/metrics` endpoint.
-- Metrics: `http_requests_total`, `custom_requests_total`.
+### Monitoring
+- Prometheus scrapes `/metrics` (e.g., `custom_requests_total`).
+- Grafana visualizes metrics in “FastAPI Metrics” dashboard.
 
 ### FastAPI endpoints
 
@@ -70,6 +86,9 @@ Production-like deployment with Docker Compose, Nginx load balancing, and Promet
 - `docker-compose.yml`, `nginx.conf`, `prometheus.yml`: Orchestration configs
 - `project4_*.txt`: Deployment and monitoring outputs
 - `nginx_screenshot.png`: Load balancer response
+- `*-deployment.yaml`, `*-service.yaml`, `*-configmap.yaml`: Kubernetes manifests
+- `project5_*.txt`: Deployment and monitoring outputs
+- `project5_grafana_screenshot.png`: Grafana dashboard
 
 ### Screenshots
 
@@ -99,3 +118,6 @@ Production-like deployment with Docker Compose, Nginx load balancing, and Promet
 
     ![](./nginx_screenshot.png)
 
+- Grafana:
+
+    ![](./grafana_screenshot.png)
