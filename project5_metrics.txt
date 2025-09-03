@@ -1,0 +1,1 @@
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"custom_requests_total","endpoint":"health","instance":"fastapi:80","job":"fastapi"},"value":[1756879591.164,"98"]}]}}

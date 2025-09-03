@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "endpoint": "health",
+          "instance": "fastapi:80",
+          "job": "fastapi"
+        },
+        "value": [1756897364.474, "19.51929824561403"
+        ]
+      },
+      {
+        "metric": {
+          "endpoint": "root",
+          "instance": "fastapi:80",
+          "job": "fastapi"
+        },
+        "value": [1756897364.474, "0.01568627450980392"
+        ]
+      },
+      {
+        "metric": {
+          "endpoint": "info",
+          "instance": "fastapi:80",
+          "job": "fastapi"
+        },
+        "value": [1756897364.474, "0"
+        ]
+      }
+    ]
+  }
+}

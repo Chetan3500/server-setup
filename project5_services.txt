@@ -1,0 +1,6 @@
+NAME         TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+fastapi      ClusterIP      10.99.233.181   <none>        80/TCP           36h
+grafana      LoadBalancer   10.101.198.72   <pending>     3000:32193/TCP   11h
+kubernetes   ClusterIP      10.96.0.1       <none>        443/TCP          39h
+nginx        LoadBalancer   10.108.198.49   <pending>     80:30391/TCP     36h
+prometheus   LoadBalancer   10.100.196.39   <pending>     9090:30197/TCP   11h

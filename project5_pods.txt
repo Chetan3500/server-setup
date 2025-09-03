@@ -1,0 +1,7 @@
+NAME                         READY   STATUS    RESTARTS        AGE
+fastapi-6f9f9488d6-6cjh5     1/1     Running   0               2m5s
+fastapi-6f9f9488d6-f4rr8     1/1     Running   0               84s
+fastapi-6f9f9488d6-gprdd     1/1     Running   0               105s
+grafana-8d59bb64b-f7rtj      1/1     Running   1 (10h ago)     11h
+nginx-596fb74657-5jscb       1/1     Running   4 (2m11s ago)   35h
+prometheus-7ff48ccd8-zv27g   1/1     Running   1 (10h ago)     11h
